@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+# PersLib---BackEnd
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**<h3>Description</h3>**
 
-## Available Scripts
+PersLib is an application that can be utilized by users who need to record their pictures, videos, documents, etc. through the years. In addition, users can transfer dissiminated files and documents in their phones, laptops, hard discs, etc. to this PerLib (Personal Library) website. They can also create their account and access their footprints easily without getting frustrated with security. PerLib app alleviates the risk of loosing important pictures and documents through unexpected events such as losing a phone, malfunctioning of hard discs, etc.
 
-In the project directory, you can run:
+The PersLib app has two repositories:</br>
+ - PersLib_Back-End: is for back-end of the app with with Python & Django.
+ - PersLib_Front-End: is for front-end of the app with React & Node.js
+ 
 
-### `npm start`
+Users will need to create account and login if they need to access the app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ <h2> PersLib---Front-End </h2></br>
 
-### `npm test`
+ **<h3>Front-end Repository</h3>**
+The frontend repository can be accessed through the link below:</br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  https://perslib.netlify.app/
+  
 
-### `npm run build`
+ **<h3>Wireframes</h3>**
+ 
+- Please see the wireframe for the index page below: </br></br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![image](https://github.com/davedawita/PersLib---FrontEnd/assets/155693018/15628a15-6a31-4777-a653-2e059d1dd777)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ - Please see the wireframes for the show pages page below: </br></br>
+ 
+![image](https://github.com/davedawita/PersLib---FrontEnd/assets/155693018/bf92e803-4ae6-4a36-b833-da64aff834c6)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![image](https://github.com/davedawita/PersLib---FrontEnd/assets/155693018/47f2d682-d009-4a00-bc21-68771b7e7dd3)
 
-### `npm run eject`
+**<h3>User Stories</h3>** 
+User Stories
+ - As a user, I want to have a personal library that enables me to search for my life events and documents and access them by selecting a specific year from list of years.
+ - As a user, I want to have Icons such as pictures, videos, favorite books, documents, etc. so that I can access my life events and documents easily.
+ - As a user, I also need to add icons and define them I like. I also need to delete them whenever I need.
+ - As a user, I want to be able to edit the details of any added life event or document description, so that I can update the information.
+ - As a user, I want to be able to delete a feature (picture, video, or favourite book), so that if it is no longer necessary it will no longer appear in the list. </br> </br>
+ 
+The folder structure includes components: components (Lib, Title, Year) & pages: AllYears,AllTitles, AllPerslibs, SingleYear, SingleTitle,SinglePerslib</br>
+The app resides in App.js.</br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h2>PersLib---Back-End</h2>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**<h3>Back-end Repository</h3>**
+The backend repo can be accessed through the link below:</br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Important Note:</br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Models are the database tables represented in Django as Python classes.</br>
+Views are the HTML returned from function in views.py.</br>
+Controllers are the actual functions themselves in views.py invoked from a HTTP request.</br>
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**<h3>MODELS:</h3>** 
+The following models are included: </br></br>
+        
+ <h2><b>perslib/models/year:</b></h2></b></br>
+  
+     class Year(models.Model):</br></br>      
+        Year = models.CharField(max_length=20)</br></br>  
+  
+<h2><b>perslib/models/title:</b></h2></b></br>
+ 
+     class Title(models.Model):</br></br>    
+        title = models.CharField(max_length=20)</br></br>    
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2><b>perslib/models/perslib:</b></h2></b></br>
+ 
+     class Perslib(models.Model):</br></br>
+        image_url = models.ImageField(upload_to='post_images', blank=True, null=True)
+        description = models.CharField(max_length=100)</br>
+        date = models.DateField(auto_now=False, auto_now_add=False)</br>
+        time = models.TimeField(auto_now=False, auto_now_add=False) </br>
+        
+ <h2>ROUTES:</h2>   
+ 
+  - **<h2>Index Page Route:</h2>** 
+POST/year: This creates the years
+GET /year: This lists the years which will direct us to titles page</br>
+Note: Editing and deleting the years is not allowed. I used "ReadOnlyModelViewSet" for the viewset class in views.py.
 
-### Code Splitting
+ - **<h2>Titles Page Routes:</h2>** 
+POST /title/: This adds a new title</br>
+GET /title/: This lists all titles</br>
+PUT /title/:id/: This updates a title</br>
+DELETE /title/:id/: This deletes a title</br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ - **<h2>Documents/Perslib Routes:</h2>** 
+POST /perslib/: This adds a new document (picture, video, etc.)</br>
+GET /perslib/: This list all documents</br>
+PUT /perslib/:id/: This updates a document</br>
+DELETE /perslib/:id/: This deletes a document</br>
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<h2>Installation Instructions</h2>
+ - Please use the link below to install the app. Enjoy the app!   </br>
+  
+  https://perslib-dawitu.netlify.app
+  
+ 
+If you are on a browser, use of Google chrome is highly recommended.    </br>
+<h2>Technologies used</h2>
 
-### Making a Progressive Web App
+![PYTHON](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![DJANGO](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![POSTGRESQL](https://img.shields.io/badge/postgresql-4169e1?style=for-the-badge&logo=postgresql&logoColor=white)
+![SQlite](https://img.shields.io/badge/SQLite-blue?logo=sqlite&logoColor=white)
+![Gunicorn Badge](https://img.shields.io/badge/Gunicorn-499848?logo=gunicorn&logoColor=fff&style=for-the-badge)
+![.ENV Badge](https://img.shields.io/badge/.ENV-ECD53F?logo=dotenv&logoColor=000&style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+![TAILWINDCSS](https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![VSCode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![JSON](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)
+![FIGMA](https://img.shields.io/badge/figma-%23F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+We can also say that we use Python-Django stack.  </br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<h2>MVP Goals</h2>
+Full CRUD(Create, Read, Update, Delete) Functionality. </br>
 
-### Deployment
+<h2>Troubleshooting</h2>
+Please follow route guidelines above to go back to previous page. Refresh the page.   </br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h2>Forthcoming Features</h2>
+In the future, we need users to be able to give access to family members so that the documents can be viewed by others. In addition, I need to learn Angular (FrontEnd Framework) and do this same app with it. Moreover, I need to create login and logout functionalities with superuser account.
