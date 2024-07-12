@@ -12,7 +12,7 @@ const Year = ({asdf, deleteYear}) => {
   return(    
     <div className='yearcontainer'>      
       <Link to={`/year/${asdf.id}`} >
-        <h1 className='yeartitle'>Years</h1>
+        {/* <h1 className='yeartitle'>Years</h1> */}
         <h2 className='years'>{asdf.year}</h2>
       </Link>      
               

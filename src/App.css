@@ -249,8 +249,10 @@
 
 .yearcontainer {
   background-color: rgb(127, 132, 201);
-  width: 400px; 
-  margin: 0px 10px 10px 10px;
+  width: 500px; 
+  margin: 2px 2px 2px 480px;
+  padding:0px 0px 0px 200px;
+  
 
 }
 
@@ -259,10 +261,12 @@
 }
 
 .years {
-  color: white;
+  color:black;
+  font-size: 50px;
+  margin:10px 10px 10px 15px;
 }
 
-.logoutBtn{
+/* .logoutBtn{
   width: 120px;
   font-size: 17px;
   font-weight:600;
@@ -276,10 +280,10 @@
 
 .logoutBtn:hover {
   filter: drop-shadow(0 2px 2px white);
-}
+} */
 
 .mainpage {
-  margin: 10px 200px 20px 200px;
+  margin: 10px 200px 10px 200px;
   
 }
 
@@ -307,4 +311,21 @@
   /* color:White; */
   font-size: 25px;
   font-weight: 800;
+  margin: 20px 20px 20px 20px;
 }
+
+.deleteYear {
+  /* margin: 2em; */
+  margin: 0 0 10px 400px;
+  padding: 5px;
+  background-color: rgba(18, 228, 200, 0.788);
+  /* outline: none;
+  border: none; */
+  border-radius: 10px;
+  filter: drop-shadow(0 2px 2px grey);
+  color: white;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+}
+
