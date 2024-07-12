@@ -48,7 +48,7 @@ const FormYear = (props) => {
         <input 
         type='submit' 
         value={props.buttonLabel_year} 
-        class='submitBtn'
+        className='submitBtn'
         // onClick={(event) => {event.preventDefault()}}
         />
 

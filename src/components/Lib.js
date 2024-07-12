@@ -11,7 +11,7 @@ const handleDelete2 = (event) => {
 return(
   <div>
   <Link to={`/perslib/${lib.id}`}>
-    <img src={lib.image_url}/>
+    <img src={lib.image_url} alt="personal Photos"/>
     <h1>Description:{lib.description}</h1>
     <h1>Date: {lib.date}</h1>
     <h1>Time:{lib.time}</h1>

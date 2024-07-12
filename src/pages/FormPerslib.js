@@ -11,12 +11,12 @@ const FormPerslib = (props) => {
 
   const[formData, setFormData] = useState(
     props.formType === 'newperslib' ? {
-      image_url: '',
+      media: '',
       description: '',
       date: '',
       time: ''
     }: {
-      image_url: currentDoc.image_url,
+      media: currentDoc.media,
       Description: currentDoc.description,
       date: currentDoc.date,
       time: currentDoc.time,
@@ -36,7 +36,7 @@ const FormPerslib = (props) => {
   //Special handlechange for the images:
   const handleImageChange = (e) => {
     let newData = { ...formData }
-    newData["image_url"] = e.target.files[0]
+    newData["media"] = e.target.files[0]
     setFormData(newData)
   }
 
@@ -57,7 +57,7 @@ const FormPerslib = (props) => {
         onChange={(e) => {handleImageChange(e)}}
         accept='image/jpeg, image/jpg, image/png, image/gif'
         // value={''}
-        name='image_url'
+        name='media'
         />
 
         <h3 className = 'EditTitle'>Description</h3>

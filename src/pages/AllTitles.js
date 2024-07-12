@@ -1,5 +1,5 @@
 import Title from '../components/Title'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
 
 const AllTitles = (props) => {  
