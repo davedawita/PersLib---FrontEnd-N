@@ -19,8 +19,8 @@ import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 //OUR API URL
-// const apiURL = process.env.REACT_APP_BACKEND_URL  
-const apiURL = 'http://localhost:8000'
+const apiURL = process.env.REACT_APP_BACKEND_URL  
+// const apiURL = 'http://localhost:8000'
 
 
 function App(props) {

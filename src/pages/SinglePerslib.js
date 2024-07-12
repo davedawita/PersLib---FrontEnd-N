@@ -10,7 +10,9 @@ const SinglePerslib = ({perslibs}) => {
   return (
     <div>
       <h2>{currentDoc.image_url}</h2>
-     
+      <Link to='/perslib'>
+          <button className='addTitle'>Add Perslib</button>
+      </Link>
       
 
       <Link to={`/editperslib/${params.id}`}>
