@@ -10,14 +10,14 @@ const Year = ({asdf, deleteYear}) => {
   }
 
   return(    
-    <div className='yearcontainer'>      
+    <div className='container'>      
       <Link to={`/year/${asdf.id}`} >
         {/* <h1 className='yeartitle'>Years</h1> */}
-        <h2 className='years'>{asdf.year}</h2>
+        <h2 className='list'>{asdf.year}</h2>
       </Link>      
               
       <form onSubmit={handleDelete}>
-        <input className='deleteYear'type='submit' value='Delete' />
+        <input className='delete'type='submit' value='Delete' />
       </form>
 
     </div>      

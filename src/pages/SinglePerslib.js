@@ -8,21 +8,19 @@ const SinglePerslib = ({perslibs}) => {
   const currentDoc = useMemo(() => perslibs.find(perslib => perslib.id === parseInt(params.id)), [params.id, perslibs])
 
   return (
-    <div>
-      <h2>{currentDoc.image_url}</h2>
+    <div className='addTitles'>
+      <h2 className = 'EditTitle'>{currentDoc.image_url}</h2>
+      <div>
       <Link to='/perslib'>
           <button className='addTitle'>Add Perslib</button>
-      </Link>
-      
-
+      </Link>  
       <Link to={`/editperslib/${params.id}`}>
-        <button>Edit Item</button>
+        <button className='addTitle'>Edit Item</button>
       </Link>
       <Link to={'/perslib'}>
-        <button>Go Back</button>
+        <button className='addTitle'>Go Back</button>
       </Link>
-
-  
+      </div>  
     </div>
   )
 }

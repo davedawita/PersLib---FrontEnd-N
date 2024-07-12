@@ -9,16 +9,16 @@ const handleDelete2 = (event) => {
   navigate('/perslib')
 }
 return(
-  <div>
+  <div className='container'>
   <Link to={`/perslib/${lib.id}`}>
     <img src={lib.image_url} alt="personal Photos"/>
-    <h1>Description:{lib.description}</h1>
-    <h1>Date: {lib.date}</h1>
-    <h1>Time:{lib.time}</h1>
+    <h1 className='list'>Description:{lib.description}</h1>
+    <h1 className='list'>Date: {lib.date}</h1>
+    <h1 className='list'>Time:{lib.time}</h1>
   </Link>      
  
   <form onSubmit={handleDelete2}>
-    <input className='deletePerslib'type='submit' value='Delete' />
+    <input className='delete'type='submit' value='Delete' />
 
   </form>
 </div>

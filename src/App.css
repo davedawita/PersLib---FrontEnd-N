@@ -1,7 +1,7 @@
 .App {
   background-color: rgb(50, 48, 46);
-  width: 200vw;
-  height: 200vh;  
+  width: 400vw;
+  height: 300vh; 
   /* overflow: hidden; */
 }
 
@@ -136,8 +136,9 @@
 
 
 .input{
-  font-size: 20px;
-  padding: 5px;    
+  font-size: 50px;
+  padding: 5px;
+  width: 670px;    
 }
 
 .inputGap {
@@ -146,7 +147,7 @@
 
 .Form {
   background-color: rgb(237, 241, 179);
-  margin: 20px 10px 0 70px;
+  margin: 0 10px 0 90px;
   padding: 20px;
   width: 700px;
   font-size: 20px;
@@ -244,10 +245,11 @@
 
 .introduction {
   color: white;
-  font-size: 20px;
+  font-size: 30px;
+  width: 60vw;
 }
 
-.yearcontainer {
+.container {
   background-color: rgb(127, 132, 201);
   width: 500px; 
   margin: 2px 2px 2px 200px;
@@ -260,7 +262,7 @@
   color: white;
 }
 
-.years {
+.list {
   color:black;
   font-size: 50px;
   margin:10px 10px 10px 15px;
@@ -305,27 +307,49 @@
   border-radius: 10px;
   color:white;
   margin: 0 10px 0 px;
+  font-size: 40px;
+  cursor: pointer;
 }
 
 .addYear {
   /* color:White; */
-  font-size: 25px;
+  font-size: 40px;
   font-weight: 800;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 420px;
+  padding:20px 20px 20px 20px;
+  cursor: pointer;
 }
 
-.deleteYear {
+.delete {
   /* margin: 2em; */
   margin: 0 0 10px 400px;
   padding: 5px;
-  background-color: rgba(18, 228, 200, 0.788);
+  background-color: rgba(228, 126, 18, 0.788);
   /* outline: none;
   border: none; */
   border-radius: 10px;
   filter: drop-shadow(0 2px 2px grey);
   color: white;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 25px;
   cursor: pointer;
+}
+
+.addTitle {
+  font-size: 25px;
+  padding: 10px 10px 10px 10px;
+  margin: 20px 50px 20px 20px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 30px;
+}
+
+.add {
+  background-color: indigo;
+}
+
+.addYear:hover {
+  filter: drop-shadow(0 2px 2px rgb(170, 140, 57));
+
 }
 

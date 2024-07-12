@@ -36,8 +36,8 @@ const FormYear = (props) => {
 
 
   return(
-    <form  onSubmit={handleSubmission3} className='FormTitle'>
-        <h3>Year</h3>
+    <form  onSubmit={handleSubmission3} className='Form'>
+        <h3 className='EditTitle'>Year</h3>
         <input className='input'
         type='number'
         onChange={handleChange3}

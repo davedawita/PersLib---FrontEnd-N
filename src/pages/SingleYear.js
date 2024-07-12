@@ -13,18 +13,18 @@ const SingleYear = (props) => {
   console.log(location)
   return (    
     <div className='addTitles'>      
-      <h2>{currentYear.year} Documents</h2> 
-      <div className='EditTitle'>
+      <h2 className = 'EditTitle'>{currentYear.year} Documents</h2> 
+      <div className='add'>
         <Link to='/newtitle'>
             <button className='addTitle'>Add Title</button>
         </Link> 
 
         <Link to={`/edityear/${params.id}/`}>
-          <button>Edit Year</button>
+          <button className='addTitle'>Edit Year</button>
         </Link>
         
         <Link to={'/'}>
-          <button>Go Back</button>
+          <button className='addTitle'>Go Back</button>
         </Link>  
         
       </div>

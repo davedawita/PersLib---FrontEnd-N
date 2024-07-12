@@ -11,13 +11,13 @@ const Title = ({abcd,deleteTitle}) => {
   }
 
   return(
-    <div> 
+    <div className='container'> 
       <Link to={`/title/${abcd.id}`}>
-        <h1>{abcd.title}</h1>
+        <h1 className='list'>{abcd.title}</h1>
       </Link>  
 
       <form onSubmit={handleDelete1}>
-        <input className='deleteTitle'type='submit' value='Delete' />
+        <input className='delete'type='submit' value='Delete' />
       </form>
 
     </div>
